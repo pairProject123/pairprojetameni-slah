@@ -1,36 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Select Interface</title>
+    <title>Doctor recommendation</title>
 </head>
 <body>
     <form id="form">
-    <h2>Select your position and speciality</h2>
+    <h2>Select your city and speciality</h2>
     <div class="select-container">
+        <!-- <label for="Cities">Choose a city:</label> -->
         <select id="selectPosition">
-            <option value="sousse">Sousse</option>
-            <option value="monastir">Monastir</option>
-            <option value="tunis">Tunis</option>
-            <option value="bizarte">Binzart</option>
-            <option value="touzer">Touzer</option>
-            <option value="sfax">Sfax</option>
+            <option value="">--Please choose a city--</option>
+            <option value="Sousse">Sousse</option>
+            <option value="Monastir">Monastir</option>
+            <option value="Tunis">Tunis</option>
+            <option value="Bizarte">Bizarte</option>
+            <option value="Ariana">Ariana</option>
+            <option value="Sfax">Sfax</option>
         </select>
-
-        <select id="selectDoctor">
-            <option value="allergists">Allergists/Immunologists</option>
-            <option value="cardiologists">Cardiologists</option>
-            <option value="surgeon Oncologist">Surgeon Oncologist</option>
-            <option value="sedical Geneticists">Medical Geneticists</option>
-            <option value="general Surgeons">General Surgeons</option>
-            <option value="dentist">Dentist</option>
+        <br>
+        <!-- <label for="speciality">Choose a speciality:</label> -->
+        <select id="selectSpeciality">
+            <option value="">--Please choose a speciality--</option>
+            <option value="Allergists">Allergists</option>
+            <option value="Cardiologists">Cardiologists</option>
+            <option value="Surgeon Oncologist">Surgeon Oncologist</option>
+            <option value="Medical Geneticists">Medical Geneticists</option>
+            <option value="General Surgeons">General Surgeons</option>
+            <option value="Dentist">Dentist</option>
+            <option value="Radiologue">Radiologue</option>
         </select>
-        <button id="search">Search</button>
+        <br>
+        <a href='displayInterface.html'><input type='button' id="search" value="Search"></a>
     </div>
     </form>
+    <!-- </form>
+        <input type="submit" onclick="getValue()" value="Submit">
+      </form> -->
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="selectInterface.js"></script>
 </body>
 </html>
