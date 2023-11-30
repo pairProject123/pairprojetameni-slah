@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Admin-interface.css">
     <title>Dashboard</title>
 </head>
 <body>
     <h1>Hello Admin</h1>
+    <div id="big-container">
+            <table id="list-of-doctros">
+                <tr id="head-of-table">
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Adress</th>
+                    <th>Spectialty</th>
+                    <th>Select</th>
+                </tr>
+        </table>
+
+        <div id="add-form">
+            
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Doctor Name">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" placeholder="Doctor Number">
+            <label for="city">City</label>
+            <input id="city" type="text" placeholder="Doctor City">
+            <label for="adress">Adress</label>
+            <input id="adress" type="text" placeholder="Doctor Adress">
+            <label for="speciality">Spectialty</label>
+            <input id="speciality" type="text" placeholder="Doctor Spectialty">
+        
+
+            <button id="add-doctor" onclick={addDoctor(),display()}>Add Doctor</button>
+        </div>
+        <button id="new-doctor" >New Doctor</button>
+        <button id="delete-doctor" onclick="deleteDoctor()">Delete Doctor</button>
+    </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="Admin-Interface.js"></script>
 </body>
 </html>
