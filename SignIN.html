@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>SIGN IN</title>
 </head>
 <body>
@@ -11,12 +12,14 @@
         <form id="sign-up-form">
             <label for="email">Email</label>
             <input type="email" id="User-email" placeholder="Email" required>
-    
+            <div id="userEmail" class="errorMessage"></div>
             <label for="password">Password</label>
             <input type="password" id="User-Pw" placeholder="password" required>
+            
         </form>
-        <!-- <button id="sign-up-button">SIGN UP</button> -->
+        <button id="sign-up-button" onclick="getData()">SIGN IN</button>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="SignUp-Login.js"></script>
 </body>
 </html>
