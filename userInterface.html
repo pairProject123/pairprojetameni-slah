@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="userInterface.css">
     <title>Doctor recommendation</title>
 </head>
 <body>
     <form id="form">
     <h2>Select your city and speciality</h2>
     <div class="select-container">
-        <!-- <label for="Cities">Choose a city:</label> -->
-        <select id="selectPosition">
+        <select class="select" id="selectPosition">
             <option value="">--Please choose a city--</option>
             <option value="Sousse">Sousse</option>
             <option value="Monastir">Monastir</option>
@@ -21,8 +20,7 @@
             <option value="Sfax">Sfax</option>
         </select>
         <br>
-        <!-- <label for="speciality">Choose a speciality:</label> -->
-        <select id="selectSpeciality">
+        <select class="select" id="selectSpeciality">
             <option value="">--Please choose a speciality--</option>
             <option value="Allergists">Allergists</option>
             <option value="Cardiologists">Cardiologists</option>
@@ -33,14 +31,12 @@
             <option value="Radiologue">Radiologue</option>
         </select>
         <br>
-        <a href='displayInterface.html'><input type='button' id="search" value="Search"></a>
-    </div>
-    </form>
-    <!-- </form>
-        <input type="submit" onclick="getValue()" value="Submit">
-      </form> -->
+        <button id="search"> Search</button>
+      </form>
+        <div class="displayDoctors"></div>
+        
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="selectInterface.js"></script>
+    <script src="userInterface.js"></script>
 </body>
 </html>
