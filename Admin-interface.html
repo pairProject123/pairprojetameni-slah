@@ -7,6 +7,7 @@
     <title>Dashboard</title>
 </head>
 <body>
+    <a href="SignUP.html"><input type="button" id="user" value="Log Out"></a>
     <h1>Hello Admin</h1>
     <div id="big-container">
             <table id="list-of-doctros">
@@ -21,7 +22,6 @@
         </table>
 
         <div id="add-form">
-            
             <label for="name">Name</label>
             <input id="name" type="text" placeholder="Doctor Name">
             <label for="phone">Phone</label>
@@ -32,9 +32,8 @@
             <input id="adress" type="text" placeholder="Doctor Adress">
             <label for="speciality">Spectialty</label>
             <input id="speciality" type="text" placeholder="Doctor Spectialty">
-        
 
-            <button id="add-doctor" onclick={addDoctor(),display()}>Add Doctor</button>
+            <button id="add-doctor" onclick = addDoctor()>Add Doctor</button>
         </div>
         <button id="new-doctor" >New Doctor</button>
         <button id="delete-doctor" onclick="deleteDoctor()">Delete Doctor</button>

@@ -43,14 +43,12 @@ function addDoctor() {
 
     var newDoctor = makeDoctor(newName, newPhone, newCity, newAdress, newSpectiality)
     doctorList.list.push(newDoctor)
-    console.log('hi',doctorList.list)
-    
+    display()
 }
 //display function to display our doctor list
 
 function display() {
-    console.log('x',doctorList.list)
-    $('#list-of-doctors').empty();
+    $('#list-of-doctors').empty()
     $('#list-of-doctors').append(`
     <tr>
     <th>Name</th>
@@ -59,7 +57,7 @@ function display() {
     <th>Adress</th>
     <th>Spectialty</th>  
     </tr>
-`)
+    `)
     for (let i = 0; i < doctorList.list.length; i++) {
         $('#list-of-doctros').append(`
                 <tr>
@@ -70,7 +68,7 @@ function display() {
                     <td>${doctorList.list[i].spectialty}</td>
                     <td><input id='doctor-${i}' type='checkbox'></td>
                 </tr>
-            `)
+        `)
     }
 }
 
@@ -89,8 +87,6 @@ $('#add-doctor').click(function () {
 
 //this 
 $('#add-form').hide()
-
-
 
 display()
 console.log(doctorList.list)

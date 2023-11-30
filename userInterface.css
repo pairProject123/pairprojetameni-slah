@@ -1,33 +1,31 @@
 
 body{
     background-image:url(images/backGroundselectInterface1.jpg);
-    background-size: 110% auto;
+    background-size: cover;
     background-repeat: no-repeat;
-
 }
 
 .selectContainer{
     margin: 20px;
     padding: 20px;
-    border-style: ridge;
-    background-color: rgb(194, 226, 226);
+    border-style: groove;
+    background-color: rgb(194, 195, 226);
     display: inline-flex;
     border-radius: 20px;
     align-content: center;
 }
 
 #oneDoctor{
-    border: 2px solid rgb(29, 27, 27);
     display:inline-flex;
-    background-color: rgba(63, 19, 151, 0.5);
-    border-radius: 5%;
+    background-color: rgba(40, 6, 109, 0.3);
+    border-radius: 2.5em;
     margin: 10px;
     max-width: 20%;
     height: 50%;
 }
 
 #oneDoctor:hover{
-    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;        
+    box-shadow: 0px 3px 5px rgba(31, 8, 180, 0.4);
 }
 
 .select{
@@ -36,22 +34,27 @@ body{
     height: 30px;
     max-width: 100%;
     border-radius: 5px;
+    font-weight: bolder;
+
 }
 
 .select:hover{
     color: aliceblue;
-    background-color: rgb(57, 27, 139);
+    background-color: rgb(36, 31, 186, 0.6);
     text-overflow: ellipsis;
 }
 
 button:hover {
-    cursor: pointer;
-    box-shadow: 0px 3px 5px rgba(21, 16, 31, 0.4);
+    box-shadow: 0px 3px 5px rgba(31, 8, 180, 0.4);
 }
-button{
+
+#search{
+    cursor: pointer;
     height: 30px;
     border-radius: 10px;
     align-self: center;
+    font-style: oblique;
+    font-weight: bold;
 }
 
 ul{
@@ -61,6 +64,14 @@ ul{
 
 li{
     margin: 5%;
+}
+
+#user{
+    cursor: pointer;
+    height: 25px;
+    margin-left: 20px;
+    display: block;
+    border-radius: 5px;
 }
 
 #name{
@@ -73,12 +84,18 @@ li{
     font-weight: bold;
     font-style: italic;
 }
+
 #city{
     font-style: oblique;
 }
-#adresse{
 
+#notFound{
+    margin-left: 15%;
 }
-#phone{
 
+.numberFound{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: larger;
+    padding-left: 15px;
 }

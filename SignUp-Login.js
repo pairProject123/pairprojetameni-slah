@@ -28,7 +28,7 @@ function store() {
         nameError.innerHTML = 'Username is already taken'
         return
     }
-    else if (password.value.length > 8) {
+    else if (password.value.length < 8) {
         
         pwError.innerHTML = 'Max of 8 characteres'
     }
