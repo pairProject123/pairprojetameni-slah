@@ -38,23 +38,11 @@ var add = function(name, phone, city, adresse, spectialty){
     this.list.push(doctor)
   }
 
-//   var display = function(special, position){
-//     this.sortList = filter(this.list, function(ele, i){
-//         return ((special == ele.spectialty) && (position == ele.city))
-//     })
-// }
-var display = function(){
-    var valueSpeciality = $('#selectSpeciality').val()
-    var valuePosition = $('#selectPosition').val()
-    var array = []
-    each(this.list, function(ele, i){
-        if((valueSpeciality == ele.spectialty) && (valuePosition == ele.city)){
-            array.push(ele)
-        }
+  var display = function(special, position){
+    this.sortList = filter(this.list, function(ele, i){
+        return ((special == ele.spectialty) && (position == ele.city))
     })
-    return array
 }
-
 
 var doctorList = Doctors()
 doctorList.add('Dr Helmi BEN SALEM', '+216 73 217 257', 'Sousse', 'Maghareb Médical Centre Complexe Selma 4 rue lLeopold Senghor 2ème etage','Cardiologists')
@@ -70,22 +58,26 @@ function displayDoctors(array){
     var valuePosition = $('#selectPosition').val()
     $('.displayDoctors').empty()
     if(array.length === 0){
-        $('.displayDoctors').append(`${valueSpeciality} in ${valuePosition} <<no one>>`)
+        $('.displayDoctors').append(`<h2 id='notFound'>${valueSpeciality} in ${valuePosition} "not found"</h2>`)
     }
     each(array, function(ele , i){
         $('.displayDoctors').append(`<div id='oneDoctor'>
-        <h2 id='Name'>${'Name: ' + ele.name}</h2><br>
-        <h3 id='speciality'>${'spectialty: ' + ele.spectialty}</h3><br>
-        <h4 id='city'>${ele.city}</h4><br>
-        <h5 id='phone'>${ele.phone}</h5>
+        <ul>
+        <li id='name'>${ele.name}</li>
+        <li id='speciality'>${ele.spectialty}</li>
+        <li id='city'>${ele.city}</li>
+        <li id='adresse'>${ele.adresse}</li>
+        <li id='phone '>${ele.phone}</li>
+        </ul>
         </div>`)
     })
 }
 
   $('#search').on('click', function(){
-    var search = doctorList.display()
-    $('.displayDoctors').show()
-    console.log(search)
-    displayDoctors(search)
+    var valueSpeciality = $('#selectSpeciality').val()
+    var valuePosition = $('#selectPosition').val()
+    doctorList.display(valueSpeciality, valuePosition)
+    console.log(doctorList.sortList)
+    displayDoctors(doctorList.sortList)
 })
 

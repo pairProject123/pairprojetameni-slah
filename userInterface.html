@@ -7,9 +7,8 @@
     <title>Doctor recommendation</title>
 </head>
 <body>
-    <form id="form">
-    <h2>Select your city and speciality</h2>
-    <div class="select-container">
+    <div class="selectContainer">
+        <h2>Choose a city:</h2>
         <select class="select" id="selectPosition">
             <option value="">--Please choose a city--</option>
             <option value="Sousse">Sousse</option>
@@ -19,7 +18,7 @@
             <option value="Ariana">Ariana</option>
             <option value="Sfax">Sfax</option>
         </select>
-        <br>
+        <h2>Choose a speciality:</h2>
         <select class="select" id="selectSpeciality">
             <option value="">--Please choose a speciality--</option>
             <option value="Allergists">Allergists</option>
@@ -30,9 +29,10 @@
             <option value="Dentist">Dentist</option>
             <option value="Radiologue">Radiologue</option>
         </select>
-        <br>
+
+        
         <button id="search"> Search</button>
-      </form>
+    </div>
         <div class="displayDoctors"></div>
         
 
