@@ -57,16 +57,16 @@ function getData() {
     var UserEmail = document.getElementById('User-email')
     var UserPw = document.getElementById('User-Pw')
 
-    if (UserEmail.value === storedEmail && UserPw.value === storedPw) {
-        
+    if (UserEmail.value === storedEmail && UserPw.value === storedPw && !(UserEmail.value === 'benabdallah2ameni@gmail.com') && !(UserPw.value === 'ameni1@')) {
+        window.location.assign('http://127.0.0.1:5500/selectInterface.html')
+        console.log('hi')
     }
-    else {
-        alert('Error on LogIn')
+    else if(UserEmail.value === 'benabdallah2ameni@gmail.com' && UserPw.value === 'ameni1@'){
+        window.location.assign('http://127.0.0.1:5500/Admin-interface.html')
     }
 
 }
+$('#hi').click(function(){
+    getData()
+})
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Your code here, it will run after the DOM is fully loaded
-//     store(); // For example, you can call your 'store' function here
-// });
