@@ -16,26 +16,33 @@ function store() {
     var specialCharacters = /[!@#$%^&*(),.?":{}|<>]/g
 
     if (name.value.length === 0 || email.value.length === 0 || password.value.length === 0) {
+        
         emailError.innerHTML = 'Please fill in the sign-up form'
     }
     else if (!email.value.includes('@')) {
+       
         emailError.innerHTML = 'Please put a correct Email'
     }
     else if (localStorage.getItem('name') === name.value) {
+        
         nameError.innerHTML = 'Username is already taken'
         return
     }
     else if (password.value.length > 8) {
+        
         pwError.innerHTML = 'Max of 8 characteres'
     }
     else if (!password.value.match(numbers)) {
+         
         pwError.innerHTML = 'Please add 1 number'
     }
     else if (!password.value.match(specialCharacters)) {
+   
         pwError.innerHTML = 'Password must contain at least one special character'
     }
 
     else if (localStorage.getItem('name') === name.value) {
+        
         nameError.innerHTML = 'Username is already taken'
         return
     }
@@ -45,28 +52,29 @@ function store() {
         localStorage.setItem('name', name.value)
         localStorage.setItem('email', email.value)
         localStorage.setItem('password', password.value)
+        window.location.assign('http://127.0.0.1:5500/SignIN.html')
     }
 }
 
-
 //get data from the localstorage functionality
 function getData() {
-    var storedName = localStorage.getItem('name')
+    
     var storedEmail = localStorage.getItem('email')
     var storedPw = localStorage.getItem('password')
     var UserEmail = document.getElementById('User-email')
     var UserPw = document.getElementById('User-Pw')
 
     if (UserEmail.value === storedEmail && UserPw.value === storedPw && !(UserEmail.value === 'benabdallah2ameni@gmail.com') && !(UserPw.value === 'ameni1@')) {
-        window.location.assign('http://127.0.0.1:5500/selectInterface.html')
-        console.log('hi')
+        window.location.assign('http://127.0.0.1:5500/userInterface.html')
+       
     }
-    else if(UserEmail.value === 'benabdallah2ameni@gmail.com' && UserPw.value === 'ameni1@'){
+    else if((UserEmail.value === 'benabdallah2ameni@gmail.com') && (UserPw.value === 'ameni1@')){
         window.location.assign('http://127.0.0.1:5500/Admin-interface.html')
+        
     }
 
 }
-$('#hi').click(function(){
+$('#sign-in-button').click(function(){
     getData()
 })
 
