@@ -27,7 +27,7 @@ function makeDoctor(name, phone, city, adresse, spectialty) {
 function Doctors(){
     var instances = {}
     instances.list = []
-    // instances.sortList = []
+    instances.sortList = []
     instances.add = add
     instances.display = display
     return instances
@@ -64,10 +64,10 @@ function displayDoctors(array){
         $('.displayDoctors').append(`<div id='oneDoctor'>
         <ul>
         <li id='name'>${ele.name}</li>
-        <li>${ele.spectialty}</li>
-        <li>${ele.city}</li>
-        <li>${ele.adresse}</li>
-        <li>${ele.phone}</li>
+        <li id='speciality'>${ele.spectialty}</li>
+        <li id='city'>${ele.city}</li>
+        <li id='adresse'>${ele.adresse}</li>
+        <li id='phone '>${ele.phone}</li>
         </ul>
         </div>`)
     })
