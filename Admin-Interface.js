@@ -1,3 +1,5 @@
+
+
 //factory function to create doctor
 function makeDoctor(name, phone, city, adresse, spectialty) {
     return {
@@ -85,8 +87,7 @@ function addDoctor() {
 //display function to display our doctor list
 
 function display() {
-    console.log('x',doctorList.list)
-    $('#list-of-doctors').empty();
+    $('#list-of-doctors').empty()
     $('#list-of-doctors').append(`
     <tr>
     <th>Name</th>
@@ -95,7 +96,7 @@ function display() {
     <th>Adress</th>
     <th>Spectialty</th>  
     </tr>
-`)
+    `)
     for (let i = 0; i < doctorList.list.length; i++) {
         $('#list-of-doctros').append(`
                 <tr>
@@ -104,9 +105,19 @@ function display() {
                     <td>${doctorList.list[i].city}</td>
                     <td>${doctorList.list[i].adresse}</td>
                     <td>${doctorList.list[i].spectialty}</td>
-                    <td><input id='doctor-${i}' type='checkbox'></td>
+                    <td><input id= 'doctorId' value='${i}' type='checkbox'></td>
                 </tr>
-            `)
+        `)
+    }
+}
+
+function deleteDoctor(){
+    for (let i = 0; i < doctorList.list.length; i++) {
+        console.log($('#doctorId').val())
+        if($('#doctorId').val() == i){
+            console.log(i)
+            delete doctorList.list[i]
+        }
     }
 }
 
@@ -125,8 +136,6 @@ $('#add-doctor').click(function () {
 
 //this 
 $('#add-form').hide()
-
-
 
 display()
 console.log(doctorList.list)

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="userInterface.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Doctor recommendation</title>
 </head>
 <body>
+    <button id='user'><i class="fa fa-home"> Log out</i></button>
     <div class="selectContainer">
         <h2>Choose a city:</h2>
         <select class="select" id="selectPosition">
@@ -31,13 +33,15 @@
         </select>
 
         
-        <button id="search"> Search</button>
+        <button id="search"><i class="fa fa-search"></i></button>
     </div>
+        <div class="numberFound"></div>
         <div class="displayDoctors"></div>
         
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="userInterface.js"></script>
+    <script src="SignUp-Login.js"></script>
     
 </body>
 </html>

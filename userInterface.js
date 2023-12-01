@@ -59,9 +59,12 @@ function displayDoctors(array){
     $('.displayDoctors').empty()
     if(array.length === 0){
         $('.displayDoctors').append(`<h2 id='notFound'>${valueSpeciality} in ${valuePosition} "not found"</h2>`)
+        $('.numberFound').empty()
     }
     each(array, function(ele , i){
-        $('.displayDoctors').append(`<div id='oneDoctor'>
+        $('.numberFound').text(`-- ${i+1} Doctors found in ${valuePosition} --`)
+        $('.displayDoctors').append(`
+        <div id='oneDoctor'>
         <ul>
         <li id='name'>${ele.name}</li>
         <li id='speciality'>${ele.spectialty}</li>
@@ -79,5 +82,9 @@ function displayDoctors(array){
     doctorList.display(valueSpeciality, valuePosition)
     console.log(doctorList.sortList)
     displayDoctors(doctorList.sortList)
+})
+
+$('#user').on('click', function(){
+  window.location.assign('SignUP.html')
 })
 

@@ -6,9 +6,9 @@ body, h1, h2, p, form, button {
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    background-image: url(background4.jpg);
+    background-image: url(background04.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 120% auto;
 }
 
 .container {
@@ -87,6 +87,20 @@ input {
     display: block;
     text-align: center;
     color: #3498db;
-    margin-top: 10px;
-    
+    margin-top: 10px;   
 }
+
+#user {
+    display: block;
+    border-radius: 15px;
+    background-color: DodgerBlue;
+    border: none; 
+    color: white; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+  }
+  
+  #user:hover {
+    background-color: RoyalBlue;
+  }
