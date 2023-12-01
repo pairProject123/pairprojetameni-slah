@@ -59,6 +59,7 @@ function displayDoctors(array){
     $('.displayDoctors').empty()
     if(array.length === 0){
         $('.displayDoctors').append(`<h2 id='notFound'>${valueSpeciality} in ${valuePosition} "not found"</h2>`)
+        $('.numberFound').empty()
     }
     each(array, function(ele , i){
         $('.numberFound').text(`-- ${i+1} Doctors found in ${valuePosition} --`)

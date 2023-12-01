@@ -1,3 +1,5 @@
+
+
 //factory function to create doctor
 function makeDoctor(name, phone, city, adresse, spectialty) {
     return {
@@ -103,9 +105,19 @@ function display() {
                     <td>${doctorList.list[i].city}</td>
                     <td>${doctorList.list[i].adresse}</td>
                     <td>${doctorList.list[i].spectialty}</td>
-                    <td><input id='doctor-${i}' type='checkbox'></td>
+                    <td><input id= 'doctorId' value='${i}' type='checkbox'></td>
                 </tr>
         `)
+    }
+}
+
+function deleteDoctor(){
+    for (let i = 0; i < doctorList.list.length; i++) {
+        console.log($('#doctorId').val())
+        if($('#doctorId').val() == i){
+            console.log(i)
+            delete doctorList.list[i]
+        }
     }
 }
 
