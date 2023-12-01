@@ -15,7 +15,6 @@ function makeDoctor(name, phone, city, adresse, spectialty) {
 function Doctors() {
     var instances = {}
     instances.list = []
-    instances.sortList = []
     instances.add = add
 
     return instances
@@ -36,19 +35,7 @@ doctorList.add('Dr Kais LAABIDI', '+216 71 798 382', 'Tunis', '23 Avenue des Eta
 doctorList.add('Dr Achraf HADIJI', '+216 71 798 382', 'Sfax', 'B 31 Syphax medical, Route de Gremda km 2', 'Surgeon Oncologist')
 doctorList.add('Dr Sofiene MILADI', '+216 70 689 409', 'Ariana', '15 Avenue Mustpha Moshen 2eme Etage App B 2-2', 'Radiologue')
 
-// function addDoctor() {
-//     var newName = $('#name').val()
-//     var newPhone = $('#phone').val()
-//     var newCity = $('#city').val()
-//     var newAdress = $('#adress').val()
-//     var newSpectiality = $('#speciality').val()
-
-//     var newDoctor = makeDoctor(newName, newPhone, newCity, newAdress, newSpectiality)
-//     doctorList.list.push(newDoctor)
-//     console.log('hi',doctorList.list)
-    
-// }
-
+// this function provide the admin to add a doctor to our doctor list
 function addDoctor() {
     var newName = $('#name').val()
     var newPhone = $('#phone').val()
@@ -69,7 +56,6 @@ function addDoctor() {
     <th>Spectialty</th>  
     </tr>
 `)
-
         $('#list-of-doctros').append(`
                 <tr>
                     <td>${doctorList.list[doctorList.list.length-1].name}</td>
@@ -80,8 +66,6 @@ function addDoctor() {
                     <td><input id='doctor-${doctorList.list.length-1}' type='checkbox'></td>
                 </tr>
             `)
- 
-
 }
 
 //display function to display our doctor list
@@ -106,23 +90,24 @@ function display() {
                     <td>${doctorList.list[i].adresse}</td>
                     <td>${doctorList.list[i].spectialty}</td>
                     <td><input id= 'doctorId' value='${i}' type='checkbox'></td>
-                </tr>
+               </tr>
         `)
     }
 }
 
 function deleteDoctor(){
-    for (let i = 0; i < doctorList.list.length; i++) {
-        console.log($('#doctorId').val())
-        if($('#doctorId').val() == i){
-            console.log(i)
-            delete doctorList.list[i]
+    // for (let i = 0; i < doctorList.list.length; i++) {
+        var remember = document.getElementById("doctorId")
+        // if(remember.checked){
+        //     alert('checked')
+        // }
+        if(remember.checked){
+            doctorList.list.splice(0,1)
+            console.log(doctorList.list)
+            display()
         }
     }
-}
-
-// this function provide the admin to add a doctor to our doctor list
-
+// }
 
 // this functionality make the add form show when we click on the New Doctor button only
 $('#new-doctor').click(function () {

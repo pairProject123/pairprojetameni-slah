@@ -94,4 +94,9 @@ body, h1, h2, p, ul, li {
   #user:hover {
     background-color: RoyalBlue;
   }
+
+  #admin{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+  }
   
