@@ -47,7 +47,6 @@ function store() {
         return
     }
 
-
     else {
         localStorage.setItem('name', name.value)
         localStorage.setItem('email', email.value)
@@ -69,8 +68,8 @@ function getData() {
        
     }
     else if((UserEmail.value === 'benabdallah2ameni@gmail.com') && (UserPw.value === 'ameni1@')){
-        window.location.assign('http://127.0.0.1:5500/Admin-interface.html')
-        
+        window.location.assign('http://127.0.0.1:5500/Admin-interface.html')   
+        display()
     }
 
 }
