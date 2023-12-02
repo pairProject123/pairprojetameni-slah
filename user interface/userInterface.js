@@ -93,6 +93,6 @@ function displayDoctors(array){
 
   // assign to window a new location
   $('#user').on('click', function(){
-    window.location.assign('SignIN.html')
+    location.replace('/sign up_in/SignIN.html')
   })
 

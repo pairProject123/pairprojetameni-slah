@@ -6,7 +6,7 @@ body, h1, h2, p, form, button {
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    background-image: url(background04.jpg);
+    background-image: url(/images/background04.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }

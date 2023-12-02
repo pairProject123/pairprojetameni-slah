@@ -51,7 +51,7 @@ function store() {
         localStorage.setItem('name', name.value)
         localStorage.setItem('email', email.value)
         localStorage.setItem('password', password.value)
-        window.location.assign('http://127.0.0.1:5500/SignIN.html')
+        window.location.replace('SignIN.html')
     }
 }
 
@@ -64,11 +64,11 @@ function getData() {
     var UserPw = document.getElementById('User-Pw')
 
     if (UserEmail.value === storedEmail && UserPw.value === storedPw && !(UserEmail.value === 'benabdallah2ameni@gmail.com') && !(UserPw.value === 'ameni1@')) {
-        window.location.assign('http://127.0.0.1:5500/userInterface.html')
+        location.replace('/user interface/userInterface.html')
        
     }
     else if((UserEmail.value === 'benabdallah2ameni@gmail.com') && (UserPw.value === 'ameni1@')){
-        window.location.assign('http://127.0.0.1:5500/Admin-interface.html')   
+        location.replace('/admin interface/Admin-interface.html')   
         display()
     }
 
