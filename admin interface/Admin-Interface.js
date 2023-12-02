@@ -1,4 +1,8 @@
-
+function each(array, callback){
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i],i) 
+    }
+}
 
 //factory function to create doctor
 function makeDoctor(name, phone, city, adresse, spectialty) {
@@ -15,6 +19,7 @@ function makeDoctor(name, phone, city, adresse, spectialty) {
 function Doctors() {
     var instances = {}
     instances.list = []
+    instances.afterDeleteList = []
     instances.add = add
 
     return instances
@@ -45,27 +50,7 @@ function addDoctor() {
 
     var newDoctor = makeDoctor(newName, newPhone, newCity, newAdress, newSpectiality)
     doctorList.list.push(newDoctor)
-   
-    $('#list-of-doctors').empty();
-    $('#list-of-doctors').append(`
-    <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>City</th>
-    <th>Adress</th>
-    <th>Spectialty</th>  
-    </tr>
-`)
-        $('#list-of-doctros').append(`
-                <tr>
-                    <td>${doctorList.list[doctorList.list.length-1].name}</td>
-                    <td>${doctorList.list[doctorList.list.length-1].phone}</td>
-                    <td>${doctorList.list[doctorList.list.length-1].city}</td>
-                    <td>${doctorList.list[doctorList.list.length-1].adresse}</td>
-                    <td>${doctorList.list[doctorList.list.length-1].spectialty}</td>
-                    <td><input id='doctor-${doctorList.list.length-1}' type='checkbox'></td>
-                </tr>
-            `)
+    display()
 }
 
 //display function to display our doctor list
@@ -82,32 +67,18 @@ function display() {
     </tr>
     `)
     for (let i = 0; i < doctorList.list.length; i++) {
-        $('#list-of-doctros').append(`
+        $('#list-of-doctors').append(`
                 <tr>
                     <td>${doctorList.list[i].name}</td>
                     <td>${doctorList.list[i].phone}</td>
                     <td>${doctorList.list[i].city}</td>
                     <td>${doctorList.list[i].adresse}</td>
                     <td>${doctorList.list[i].spectialty}</td>
-                    <td><input id= 'doctorId' value='${i}' type='checkbox'></td>
+                    <td><button id= 'doctorId' value='${i}'>delete</button></td>
                </tr>
         `)
     }
 }
-
-function deleteDoctor(){
-    // for (let i = 0; i < doctorList.list.length; i++) {
-        var remember = document.getElementById("doctorId")
-        // if(remember.checked){
-        //     alert('checked')
-        // }
-        if(remember.checked){
-            doctorList.list.splice(0,1)
-            console.log(doctorList.list)
-            display()
-        }
-    }
-// }
 
 // this functionality make the add form show when we click on the New Doctor button only
 $('#new-doctor').click(function () {
@@ -125,3 +96,27 @@ $('#add-form').hide()
 display()
 console.log(doctorList.list)
 
+$('#user').on('click', function(){
+    location.replace('/sign up_in/SignIN.html')
+}
+)
+function returnValue(){
+    var value = 0
+    for (let i = 0; i < doctorList.list.length; i++) {
+        if($('#doctorId').val() == i){
+            return value = i 
+        }
+    }
+}
+
+$(`#doctorId`).on('click', function(){
+    var value = returnValue()
+    console.log(value)
+    each(doctorList.list, function(ele, i){
+        if(value == i ){
+            doctorList.list.splice(i,1);
+            return display()
+        }
+    })
+    console.log(doctorList.list);
+})
